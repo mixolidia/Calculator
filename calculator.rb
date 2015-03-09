@@ -1,21 +1,3 @@
-def calculate(f, a, b)
-  if f == "\+" || f == "addition"
-      add(a, b)
-  elsif f == "\-" || f == "subtraction"
-    subtract(a, b)
-  elsif f == "\*" || f == "multiplication"
-      multiply(a, b)
-  elsif f == "\/" || f == "division"
-    divide(a, b)
-  elsif f == "\^" || f == "exponent"
-      exponent(a, b)
-  elsif f == "root" || f == "square root"
-      square(a)
-  else
-    nil
-  end
-end
-
 def add(a, b)
   a + b
 end
@@ -40,77 +22,44 @@ def square(a)
   Math.sqrt(a)
 end
 
-def formula(input)
- if input == "+" || input == "addition"
-   symbol = "+"
- elsif input == "-" || input == "subtraction"
-   symbol = "-"
- elsif input == "*" || input == "multiplication"
-   symbol = "*"
- elsif input == "/" || input == "division"
-   symbol = "/"
-  elsif input == "^" || input == "exponent"
-    symbol = "^"
-  elsif input == "square root" || input == "root"
-    symbol = "root"
- end
+def calculate(f, a, b)
+  if f == "+" || f == "addition"
+      add(a, b)
+  elsif f == "-" || f == "subtraction"
+    subtract(a, b)
+  elsif f == "*" || f == "multiplication"
+      multiply(a, b)
+  elsif f == "/" || f == "division"
+    divide(a, b)
+  elsif f == "^" || f == "exponent"
+      exponent(a, b)
+  elsif f == "root" || f == "square root"
+      square(a)
+  else
+    nil
+  end
 end
 
 puts "Hello there!"
 puts " What kind of math would you like to do?
   (+, -, *, /, ^, root )"
-input = gets.chomp
-answer ="The answer is "
+f = gets.chomp
 
 puts "what is the first number?"
-num1 = gets.to_i
-# if num1 !=  /\d/
-#   puts "Please enter a number not letters"
-#   num1 = gets.chomp.to_i
-# else
-# num1 = gets.chomp.to_i
-# end
+a = gets.to_i
 
-if  num1 == ""
+
+if  a == ""
   puts "Press a number, not return."
-  num1 = gets.chomp.to_i
+  a = gets.chomp.to_i
 else
-  num1 = num1.to_i
+  a = a.to_i
 end
 
 puts "what is the second number?"
-num2 = gets.chomp.to_i
-# if num2 !=  /\d/
-#   puts "Please enter a number not letters"
-#   num2 = gets.chomp.to_i
-# else
-# num2 = gets.chomp.to_i
-# end
+b = gets.chomp.to_i
 
-# num2 = gets.chomp
-# if  num2 == ""
-#   puts "Press a number, not return."
-#   num2 = gets.chomp.to_i
-# else
-#   num2 = num2.to_i
-# end
 
-answer = calculate(input, num1, num2)
+n = calculate(f, a, b)
 
-puts "Your answer is #{answer}.
-
-# if input == "+" || input == "addition"
-#   puts "The answer is #{num1} + #{num2} = #{answer}"
-# elsif input == "-" || input == "subtraction"
-#   puts "The answer is #{num1} - #{num2} = #{answer}"
-# elsif input == "*" || input == "multiplication"
-#   puts "The answer is #{num1} * #{num2} = #{answer}"
-# elsif input == "/" || input == "division"
-#   puts "The answer is #{num1} / #{num2} = #{answer}"
-# elsif input == "^" || input == "exponent"
-#   puts "The answer is #{num1} ^ #{num2} = #{answer}"
-# elsif input == "square root" || input == "root"
-#     puts "The square root of #{num1} = #{answer}"
-# end
-
-# puts "The answer is #{num1} #{formula(input)} #{num2} = #{answer}."
+puts "Your answer is #{n}."
