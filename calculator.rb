@@ -63,13 +63,13 @@ input = gets.chomp
 answer ="The answer is "
 
 puts "what is the first number?"
-num1 = gets
-if num1 !=  /\d/
-  puts "Please enter a number not letters"
-  num1 = gets.chomp.to_i
-else
-num1 = gets.chomp.to_i
-end
+num1 = gets.to_i
+# if num1 !=  /\d/
+#   puts "Please enter a number not letters"
+#   num1 = gets.chomp.to_i
+# else
+# num1 = gets.chomp.to_i
+# end
 
 if  num1 == ""
   puts "Press a number, not return."
@@ -79,25 +79,25 @@ else
 end
 
 puts "what is the second number?"
-num2 = gets
-if num2 !=  /\d/
-  puts "Please enter a number not letters"
-  num2 = gets.chomp.to_i
-else
 num2 = gets.chomp.to_i
-end
+# if num2 !=  /\d/
+#   puts "Please enter a number not letters"
+#   num2 = gets.chomp.to_i
+# else
+# num2 = gets.chomp.to_i
+# end
 
-num2 = gets.chomp
-if  num2 == ""
-  puts "Press a number, not return."
-  num2 = gets.chomp.to_i
-else
-  num2 = num2.to_i
-end
+# num2 = gets.chomp
+# if  num2 == ""
+#   puts "Press a number, not return."
+#   num2 = gets.chomp.to_i
+# else
+#   num2 = num2.to_i
+# end
 
 answer = calculate(input, num1, num2)
 
-#puts "Wow, your answer is #{answer}. That's a big number"
+puts "Your answer is #{answer}.
 
 # if input == "+" || input == "addition"
 #   puts "The answer is #{num1} + #{num2} = #{answer}"
@@ -113,4 +113,4 @@ answer = calculate(input, num1, num2)
 #     puts "The square root of #{num1} = #{answer}"
 # end
 
-puts "The answer is #{num1} #{formula(input)} #{num2} = #{answer}."
+# puts "The answer is #{num1} #{formula(input)} #{num2} = #{answer}."
